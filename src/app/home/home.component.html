@@ -1,0 +1,34 @@
+<div class="input-group">
+    <input [(ngModel)]="message.name" type="text" placeholder="Enter name" class="form-control">
+</div>
+<div class="input-group">
+    <input [(ngModel)]="message.email" type="text" placeholder="Enter email" class="form-control">
+</div>
+
+<div class="input-group">
+    <input [(ngModel)]="message.age" type="text" placeholder="Enter age" class="form-control">
+</div>
+
+<div class="input-group">
+    <input [(ngModel)]="message.address" type="text" placeholder="Enter address" class="form-control">
+</div>
+
+<div class="input-group">
+    <input [(ngModel)]="message.phone" type="text" placeholder="Enter phone" class="form-control">
+</div>
+<button (click)="createMessage()">Create</button>
+
+
+<div class="row">
+    <div *ngFor="let message of messages| async" class="list-grup-iten col-lg-4 card" style="width: 19rem;">
+        <div class="card-body">
+            <h5 class="card-name">{{message.name}}</h5>
+            <p class="card-text">{{message.email}}</p>
+            <p class="card-text">{{message.age}}</p>
+            <p class="card-text">{{message.address}}</p>
+            <p class="card-text">{{message.phone}}</p>
+            <p class="card-text">{{message._id}}</p>
+            <button (click)="deleteMessage (message._id)">Delete</button>
+        </div>
+    </div>
+</div>
